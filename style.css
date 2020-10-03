@@ -1,0 +1,232 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #777;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+textarea {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 15px;
+}
+
+.container {
+ height: 100%;
+ width: 100%; 
+ background-image: url("./images/microphone-voice.jpg");
+ position: absolute;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(to bottom right,#0f4f75,#dc4225);
+  opacity: 0.5;
+}
+
+.voice-box {
+  width: 600px;
+  height: 500px;
+  background: #fff;
+  align-items: center;
+  margin: 6% auto;
+  padding: 5px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0.85;
+}
+
+.button-box {
+  width: 330px;
+  margin: 35px auto;
+  border-radius: 30px;
+  box-shadow: 0 0 20px 9px #ff61241f;
+  position: relative;
+}
+
+#base-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 110px;
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  border-radius: 30px;
+  border: 0;
+  transition: 0.5s;
+}
+
+.toggle-btn {
+  padding: 12px 20px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+}
+
+.btn-3 {
+  padding: 12px 35px;
+}
+
+.input-group {
+  position: absolute;
+  top: 150px;
+  width: 560px;
+  text-align: center;
+  transition: 0.5s;
+  
+  
+}
+
+.textarea-field {
+  width: 100%;
+  padding: 10px;
+  border: solid 1px #999;
+  border-radius: 5px;
+  outline: none;
+  background: transparent;
+}
+
+.submit-btn {
+  background: linear-gradient(to right, #ff105f, #ffad06);
+  border: 0;
+  padding: 15px 30px;
+  border-radius: 5px;
+  width: 35%;
+  margin: auto;
+  outline: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 30px 0;
+  cursor: pointer;
+}
+
+#readloud-form {
+  left: 20px;
+}
+
+
+#repeatit-form {
+  left: 620px;
+}
+
+#chat-form {
+  left: 620px;
+}
+
+#chat-form .info {
+  color: #777;
+  border: solid 1px #ddd;
+  padding: 20px 40px;
+  text-align: left;
+}
+
+.note {
+  color: red;
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
+.say {
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+#repeatit-form p {
+  display: none;
+  color: #777;
+  margin: 0 100px;
+  padding-bottom: 50px;
+}
+
+.notice {
+  margin-top: 30px;
+  color: #999;
+  font-size: 12px;
+}
+
+.content {
+  color: #777;
+  border: dotted 1px #8c8c8c;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#chat-status {
+  display: none;
+  color: #444;
+}
+
+.copyright {
+  /* margin-top: 20px; */
+  color: #777;
+  position: absolute;
+  bottom: 15px;
+  font-size: 10px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.copyright a {
+  color: #555;
+}
+
+@media screen and (max-width: 600px) {
+  .voice-box {
+    width: 380px;
+  }
+
+  .input-group {
+    width: 340px;
+  }
+
+  .button-box {
+    width: 270px;
+  }
+
+  #base-btn {
+    width: 90px;
+  }
+
+  .toggle-btn {
+    padding: 12px 10px;
+  }
+
+  .submit-btn {
+    width: 60%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <title>Voice App - by Shihab Jamil</title>
+  </head>
+  <body>
+    <div class="container">
+      
+      <div class="voice-box">
+        <div class="button-box">
+          <button id="base-btn"></button>
+          <button type="button" class="toggle-btn btn-1" onclick="showReadAloud()">Read Aloud</button>
+          <button type="button" class="toggle-btn btn-2" onclick="showRepeatIt()">Repeat Me</button>
+          <button type="button" class="toggle-btn btn-3" onclick="showChat()">Chat</button>
+        </div>
+
+        <div class="input-group" id="readloud-form">
+          <textarea id="text-to-read" name="" class="textarea-field" cols="30" rows="10" placeholder="Put your text here and I'll read it for you."></textarea>
+          <button class="submit-btn" id="read-btn" onclick="readAloud()">Read</button>
+        </div>
+
+        <div class="input-group" id="repeatit-form">
+          <!-- <p>Click the button below to start speaking. Once you stop, you will hear your spoken text back. <br><br> Enjoy!</p> -->
+          <div class="content">Your spoken text will appear here.</div>
+          <button class="submit-btn" id="repeat-btn">Start Speaking</button>
+          <p id="status"></p>
+        </div>
+
+        <div class="input-group" id="chat-form">
+          <div class="info">
+            <p class="note">Under Development*</p>
+            <p>Click the button below and ask:</p>
+            <ul class="say">
+              <li>How are you?</li>
+              <li>How do you do?</li>
+              <li>How are you doing?</li>
+            </ul>
+          </div>
+          <button class="submit-btn" id="reply-btn">Say Something</button>
+          <p id="chat-status"></p>
+          <p class="notice">* I am trying to build a voice activated chat so that it can listen to you and reply some sense.</p>
+        </div>
+
+        <p class="copyright">Copyright @ <a target="_blank" href="https://www.linkedin.com/in/shihabjamil/">Shihab Jamil</a></p>
+      </div>
+    </div>
+
+
+    <script>
+
+      let base_value;
+      let offset_value;
+      let btn_width;
+      let activeFunction = "showReadAloud";
+
+
+      const readloud_form = document.getElementById("readloud-form");
+      const repeatit_form = document.getElementById("repeatit-form");
+      const chat_form = document.getElementById("chat-form");
+      const base_btn = document.getElementById("base-btn");
+      const toggle_btns = document.getElementsByClassName(".toggle-btn");
+      
+
+      function myFunction(x) {
+        if (x.matches) { // If media query matches
+          base_value = 380;
+          offset_value = 20;
+          btn_width = 90;
+          // console.log("Below 600", activeFunction);
+          window[activeFunction]();
+
+        } else {
+          base_value = 600;
+          offset_value = 20;
+          btn_width = 110;
+          // console.log("Above 600px", activeFunction);
+          window[activeFunction]();
+          
+        }
+      }
+
+      var x = window.matchMedia("(max-width: 600px)")
+      myFunction(x) // Call listener function at run time
+      x.addListener(myFunction,) // Attach listener function on state changes
+
+
+    
+
+      
+
+      function showReadAloud() {
+        
+        readloud_form.style.left = offset_value + "px";
+        repeatit_form.style.left = base_value + offset_value + "px";
+        chat_form.style.left = (2 * base_value) + offset_value + "px";
+        base_btn.style.left = "0px";
+        activeFunction = "showReadAloud";
+      }
+      function showRepeatIt() {
+        
+        readloud_form.style.left = (-1 * base_value) + offset_value + "px";
+        repeatit_form.style.left = offset_value + "px";
+        chat_form.style.left = base_value + offset_value + "px";
+        base_btn.style.left = btn_width+"px";
+        activeFunction = "showRepeatIt";
+      }
+
+      function showChat() {
+        
+        readloud_form.style.left = (-2 * base_value) + offset_value + "px";
+        repeatit_form.style.left = (-1 * base_value) + offset_value + "px";
+        chat_form.style.left = offset_value + "px";
+        base_btn.style.left = 2*btn_width+"px";
+        activeFunction = "showChat";
+      }
+
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
