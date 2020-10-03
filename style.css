@@ -38,7 +38,7 @@ textarea {
 
 .voice-box {
   width: 600px;
-  height: 500px;
+  height: 530px;
   background: #fff;
   align-items: center;
   margin: 6% auto;
@@ -173,10 +173,10 @@ textarea {
 }
 
 .copyright {
-  /* margin-top: 20px; */
+  padding: 10px 0;
   color: #777;
   position: absolute;
-  bottom: 15px;
+  bottom: 5px;
   font-size: 10px;
   text-align: center;
   left: 50%;
